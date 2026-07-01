@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Debshikhar Das — Security Engineer · DevSecOps & AI Security</title>
-  <meta name="description" content="Debshikhar Das — Security Engineer specializing in DevSecOps automation, AI/agentic security, AppSec, and threat modeling. MS Cybersecurity (Stevens). Currently securing AI-driven vulnerability workflows at BNP Paribas CIB." />
+  <meta name="description" content="Debshikhar Das — Security Engineer specializing in DevSecOps automation, AI/agentic security (agent identity, A2A/MCP governance, autonomy ceilings), AppSec, and threat modeling. MS Cybersecurity (Stevens). Currently securing AI-driven vulnerability workflows at BNP Paribas CIB." />
   <meta name="theme-color" content="#08090d" />
   <meta property="og:title" content="Debshikhar Das — Security Engineer · DevSecOps & AI Security" />
-  <meta property="og:description" content="DevSecOps & AI-security engineer: policy-as-code enforcement, agentic-AI threat modeling, AppSec, and cloud security. Author of private-ai-infra." />
+  <meta property="og:description" content="DevSecOps & AI-security engineer: policy-as-code enforcement for agents as non-human identities, A2A/MCP governance, agentic-AI threat modeling, AppSec, and cloud security. Author of private-ai-infra." />
   <meta property="og:type" content="profile" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b5cf6'/%3E%3Cstop offset='.55' stop-color='%233b82f6'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='%230d0f14'/%3E%3Ccircle cx='16' cy='16' r='7' fill='url(%23g)'/%3E%3C/svg%3E" />
@@ -45,10 +45,12 @@
         <div class="role">Security Engineer<span class="sep">·</span>DevSecOps &amp; AI Security<span class="sep">·</span>AppSec</div>
         <p class="tagline">
           I build the <strong>enforcement layer</strong> around AI and software: policy-as-code that
-          decides what an identity is allowed to do, threat models that cite their own proof, and
-          DevSecOps pipelines that turn security telemetry into action. Three years scaling
-          enterprise vulnerability and AppSec programs — now focused on <strong>agentic-AI
-          security</strong>, where capability has badly outrun authority.
+          decides what an identity — human or agent — is allowed to do, threat models that cite
+          their own proof, and DevSecOps pipelines that turn security telemetry into action. Three
+          years scaling enterprise vulnerability and AppSec programs — now focused on
+          <strong>agentic-AI security</strong>: agent identity, least-privilege authorization for
+          A2A delegation and MCP tool access, and autonomy ceilings that hold even when the model
+          is compromised. Capability has badly outrun authority; I work on the part that says no.
         </p>
         <div class="id-meta">
           <span class="chip status"><span class="ic" aria-hidden="true"></span> Jersey City, NJ · open to senior AI-security roles</span>
@@ -100,10 +102,15 @@
                 risk-prioritized remediation, reaching <b>~95% SLA compliance</b> on critical vulnerabilities.</li>
               <li>Stood up a real-time obsolescence tracker into OpenSearch for predictive end-of-life
                 detection, and laid the foundation for <b>agentic-AI adoption</b> in vulnerability workflows.</li>
+              <li>Turned vulnerability and code-quality telemetry into <b>KPI dashboards and
+                executive/regulatory reporting</b>; enriched SIEM detections with vulnerability
+                intelligence and partnered with IAM on RBAC/MFA — aligning controls with
+                <b>NIST CSF, ISO 27001, and NYSDFS</b>.</li>
             </ul>
             <div class="tl-tags">
               <span class="tag">RAG / LangChain</span><span class="tag">Vector DBs</span><span class="tag">Agentic AI</span>
               <span class="tag">Vulnerability Mgmt</span><span class="tag">OpenSearch</span><span class="tag">CVE / CVSS</span>
+              <span class="tag">ServiceNow</span><span class="tag">NIST CSF / NYSDFS</span>
             </div>
           </div>
         </div>
@@ -180,7 +187,7 @@
       <div class="skill-grid reveal">
         <div class="skill-cluster card">
           <h3><span class="k">01</span> AI &amp; Agentic Security</h3>
-          <div class="pills"><span>OWASP LLM / Agentic Top 10</span><span>Prompt-injection defense</span><span>RAG security</span><span>LangChain / LangGraph</span><span>Vector DBs (Qdrant, Chroma)</span><span>Policy-as-code enforcement</span><span>Autonomy / authority gating</span></div>
+          <div class="pills"><span>OWASP LLM / Agentic Top 10</span><span>MITRE ATLAS</span><span>NIST AI RMF</span><span>Agent identity &amp; least privilege</span><span>A2A / MCP governance</span><span>Prompt-injection defense</span><span>RAG security</span><span>LangChain / LangGraph</span><span>Vector DBs (Qdrant, Chroma)</span><span>Policy-as-code enforcement</span><span>Autonomy / authority gating</span><span>Adversarial evals / red-teaming</span></div>
         </div>
         <div class="skill-cluster card">
           <h3><span class="k">02</span> DevSecOps &amp; CI/CD</h3>
@@ -212,16 +219,21 @@
         <h2 class="section-title" id="pr-h"><span class="gradient-text">private-ai-infra</span> — an AI authority plane</h2>
         <p class="section-sub">A local-first AI governance plane that enforces the thesis my day job keeps running
           into: <em>AI capability is not AI authority.</em> Built end to end — gateway, policy engine, agent
-          control plane, adversarial evals, and CI.</p>
+          control plane, A2A &amp; MCP governance, adversarial evals, and CI. In surveyed enterprise agent
+          deployments, ~99% of configurations contain zero deny rules; this project is the opposite —
+          deny is the default, and every allow is written down.</p>
       </div>
       <div class="feature reveal">
         <div>
           <h3>Enforced in code, proven by attack</h3>
-          <p>An OpenAI-compatible gateway mediates every call to a local model: policy-as-code identity,
-            per-principal model allowlists, an enforced <strong>L0–L6 autonomy ceiling</strong>, egress
-            guardrails, and a decision audit independently re-verified by a read-only assurance agent. A
-            15-case adversarial suite — including agentic probes mapped to the <strong>OWASP Top 10 for
-            Agentic Applications</strong> — re-attacks every control and fails CI on regression.</p>
+          <p>A pip-installable, OpenAI-compatible gateway mediates every call to a local model: policy-as-code
+            identity, per-principal model allowlists, an enforced <strong>L0–L6 autonomy ceiling</strong>, egress
+            guardrails, and a decision audit independently re-verified by a read-only assurance agent. The same
+            plane governs <strong>agent-to-agent delegation</strong> (policy-derived A2A Agent Cards, skill-scoped)
+            and <strong>MCP tool access</strong> (per-tool minimum autonomy levels). An 18-case adversarial
+            suite — mapped to the <strong>OWASP Top 10 for Agentic Applications</strong> and
+            <strong>MITRE ATLAS</strong> — re-attacks every control and fails CI on regression;
+            232 tests at 92% coverage back it.</p>
           <div class="cta-row" style="margin-top:1.4rem">
             <a class="btn btn-primary" href="https://debshikhar-sec.github.io/private-ai-infra/">Explore the project</a>
             <a class="btn btn-ghost" href="https://github.com/debshikhar-sec/private-ai-infra">Source on GitHub</a>

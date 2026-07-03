@@ -139,7 +139,7 @@
       <li>Added egress secret-redaction guardrails, per-principal rate limiting, a structured decision audit, and Prometheus metrics; an independent read-only assurance agent reconciles audit ↔ metrics ↔ policy across nine controls.</li>
       <li>Layered defenses around the plane: an ingress AI-firewall (prompt-injection / jailbreak / PII detection that survives Unicode homoglyph and zero-width evasion, OWASP LLM01), a delegation ledger where sub-delegated authority can only narrow — proven by a three-agent orchestration demo (planner → sandboxed executor → verifier) — live OSV.dev CVE intelligence for the AI stack, and measure-first prompt compression with exact token accounting.</li>
       <li>Wrote a 23-case adversarial eval suite (fails CI on regression) tagged to the OWASP Top 10 for LLMs / Agentic Applications and MITRE ATLAS techniques, proving controls hold even when the model is assumed compromised by prompt injection.</li>
-      <li>Hardened delivery: 350 tests at ~93% coverage; ruff, bandit, pip-audit, and CodeQL in CI; branch-protection ruleset and Dependabot; documented STRIDE threat model, security model, and a product-evolution roadmap.</li>
+      <li>Hardened delivery: 370 tests at ~93% coverage; ruff, bandit, pip-audit, and CodeQL in CI; branch-protection ruleset and Dependabot; documented STRIDE threat model, security model, and a product-evolution roadmap.</li>
     </ul>
   </div>
 

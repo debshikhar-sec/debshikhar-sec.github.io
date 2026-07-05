@@ -139,7 +139,8 @@
       <li>Added egress secret-redaction guardrails, per-principal rate limiting, a structured decision audit, and Prometheus metrics; an independent read-only assurance agent reconciles audit ↔ metrics ↔ policy across nine controls.</li>
       <li>Layered defenses around the plane: an ingress AI-firewall (prompt-injection / jailbreak / PII detection that survives Unicode homoglyph and zero-width evasion, OWASP LLM01), a versioned delegation protocol (GAD) with a conformance suite where sub-delegated authority can only narrow — surfaced through a Governed Chat Console that runs the plan → sandboxed-apply → verify loop under a human approval gate — live OSV.dev CVE intelligence for the AI stack, SIEM decision-event export, and measure-first prompt compression.</li>
       <li>Wrote a 23-case adversarial eval suite (fails CI on regression) tagged to the OWASP Top 10 for LLMs / Agentic Applications and MITRE ATLAS techniques, proving controls hold even when the model is assumed compromised by prompt injection.</li>
-      <li>Hardened delivery: 389 tests at ~93% coverage; ruff, bandit, pip-audit, and CodeQL in CI; branch-protection ruleset and Dependabot; documented STRIDE threat model, security model, and a product-evolution roadmap.</li>
+      <li>Closed a governed execute-authority loop (owner-gated, single-use, canonical-plan-hash-bound approvals) and built a verifier-owned, tamper-evident evidence sink — canonical JSON hashing, per-emitter HMAC signatures, append-only hash chaining, replay detection, from-scratch chain verification — with signed executor <code>apply_result</code> emission; independent verifier consumption is the next milestone, not yet complete.</li>
+      <li>Hardened delivery: 568 tests at ~93% coverage; ruff, bandit, pip-audit, and CodeQL in CI; branch-protection ruleset and Dependabot; documented STRIDE threat model, security model, and a product-evolution roadmap.</li>
     </ul>
   </div>
 

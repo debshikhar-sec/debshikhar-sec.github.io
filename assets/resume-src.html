@@ -137,9 +137,10 @@
       <li>Designed and built a pip-installable, OpenAI-compatible local AI gateway (Python/Flask + nginx, Apple Silicon/MLX) that enforces policy-as-code identity, per-principal model authorization, and an L0–L6 autonomy ceiling on every model call — denying over-privileged or unauthorized requests <i>before</i> any model loads.</li>
       <li>Extended the same enforcement plane to agent-to-agent and agent-to-tool traffic: policy-derived A2A Agent Cards, skill-scoped delegation, and an MCP tool registry with per-tool minimum autonomy levels — least-privilege authorization for non-human identities, with explicit deny as the default.</li>
       <li>Added egress secret-redaction guardrails, per-principal rate limiting, a structured decision audit, and Prometheus metrics; an independent read-only assurance agent reconciles audit ↔ metrics ↔ policy across nine controls.</li>
-      <li>Layered defenses around the plane: an ingress AI-firewall (prompt-injection / jailbreak / PII detection that survives Unicode homoglyph and zero-width evasion, OWASP LLM01), a versioned delegation protocol (GAD) with a conformance suite where sub-delegated authority can only narrow — surfaced through a Governed Chat Console that runs the plan → sandboxed-apply → verify loop under a human approval gate — live OSV.dev CVE intelligence for the AI stack, SIEM decision-event export, and measure-first prompt compression.</li>
+      <li>Layered defenses around the plane: an ingress AI-firewall (prompt-injection / jailbreak / PII detection that survives Unicode homoglyph and zero-width evasion, OWASP LLM01), a versioned delegation protocol (GAD) with a conformance suite where sub-delegated authority can only narrow — surfaced through a Governed Chat Console that runs the plan → sandboxed-apply → verify loop under a human approval gate — plus AI-stack CVE intelligence and SIEM decision-event export.</li>
       <li>Wrote a 23-case adversarial eval suite (fails CI on regression) tagged to the OWASP Top 10 for LLMs / Agentic Applications and MITRE ATLAS techniques, proving controls hold even when the model is assumed compromised by prompt injection.</li>
-      <li>Hardened delivery: 389 tests at ~93% coverage; ruff, bandit, pip-audit, and CodeQL in CI; branch-protection ruleset and Dependabot; documented STRIDE threat model, security model, and a product-evolution roadmap.</li>
+      <li>Separated model capability from execution authority: a governed, owner-gated, single-use, canonical-plan-hash-bound approval loop and a verifier-owned, tamper-evident evidence sink (canonical hashing, per-emitter HMAC signatures, append-only hash chaining) with signed OpenCode <code>apply_result</code> emission.</li>
+      <li>Hardened delivery: 568 tests at ~93% coverage; ruff, bandit, pip-audit, and CodeQL in CI; branch-protection ruleset and Dependabot; documented STRIDE threat model, security model, and a product-evolution roadmap.</li>
     </ul>
   </div>
 
@@ -149,13 +150,13 @@
 
   <h2>Technical Skills</h2>
   <div class="skills">
-    <div><b>AI / ML Security:</b> OWASP LLM &amp; Agentic Top 10, MITRE ATLAS, NIST AI RMF, prompt-injection defense, RAG security, agent identity &amp; least-privilege authorization (A2A, MCP), LLM autonomy/authority governance, policy-as-code enforcement, adversarial evals &amp; red-teaming</div>
+    <div><b>AI / ML Security:</b> OWASP LLM &amp; Agentic Top 10, MITRE ATLAS, NIST AI RMF, prompt-injection defense, RAG security, agent identity &amp; least-privilege authorization (A2A, MCP), autonomy/authority governance, adversarial evals</div>
     <div><b>AI / ML Engineering:</b> LangChain, LangGraph, RAG, vector databases (Qdrant, Chroma), prompt engineering, NLP, MLX</div>
     <div><b>DevSecOps &amp; CI/CD:</b> Jenkins, GitHub Actions, SAST (SonarQube), SCA (Snyk), DAST (Checkmarx), container scanning (Aqua), JFrog, Nexus, SBOM, bandit, pip-audit, CodeQL</div>
     <div><b>AppSec &amp; Threat Modeling:</b> STRIDE, OWASP Top 10, IriusRisk, ThreatModeler, OWASP ZAP, Burp Suite, secure SDLC</div>
-    <div><b>Cloud &amp; Infrastructure:</b> AWS (EC2, S3, VPC, IAM, WAF, CloudTrail, CloudWatch, CloudFront, Route 53), Docker, Kubernetes, Terraform, Ansible, OpenSearch</div>
+    <div><b>Cloud &amp; Infrastructure:</b> AWS (EC2, S3, IAM, WAF, CloudTrail, CloudFront), Docker, Kubernetes, Terraform, Ansible, OpenSearch</div>
     <div><b>Languages &amp; Frameworks:</b> Python, Java, Shell; Flask, FastAPI; SQL (PostgreSQL, Oracle, SQLite); NIST CSF &amp; 800-53, ISO 27001, NYSDFS</div>
-    <div><b>Vulnerability Management:</b> Nexpose, Tanium, CVE / CVSS, exploit intelligence, SLA-driven remediation, obsolescence / EOL tracking, ServiceNow, Jira</div>
+    <div><b>Vulnerability Management:</b> Nexpose, Tanium, CVE / CVSS, SLA-driven remediation, EOL tracking, ServiceNow, Jira</div>
   </div>
 
 </body>
